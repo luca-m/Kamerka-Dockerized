@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y8bbfvj#b7a%)t_tu28#tzvfhk_s)o_-oqkgch7^z00us)&qh@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # CELERY STUFF
 BROKER_URL = 'redis://localhost:6379'
@@ -32,7 +32,7 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'Africa/Nairobi'
+CELERY_TIMEZONE = 'Europe/Rome'
 CELERY_IMPORTS = ('kamerka.tasks',)
 # Application definition
 STATIC_URL = '/static/'

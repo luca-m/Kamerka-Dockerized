@@ -1,5 +1,6 @@
 import ast
 import json
+import os
 from collections import Counter
 import requests
 from django.core.files.storage import FileSystemStorage
@@ -75,8 +76,11 @@ passwds = {"bosch_security":"""The Bosch Video Recorder 630/650 Series is an 8/1
 
 def get_keys():
     try:
-        with open('keys.json') as keys:
-            keys_json = json.load(keys)
+        if os.environ.get('KAMERKA_API') is not None:
+            keys_json = json.loads(os.environ['KAMERKA_API'])
+        else:
+            with open('keys.json') as keys:
+                keys_json = json.load(keys)
 
         return keys_json
     except Exception as e:

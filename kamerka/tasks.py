@@ -1,6 +1,7 @@
 import json
 import math
 import re
+import os
 
 import maxminddb
 from libnmap.parser import NmapParser
@@ -458,8 +459,11 @@ attackers_infra_queries = {"cobaltstrike": 'product:"Cobalt Strike Beacon"',
 
 def get_keys():
     try:
-        with open('keys.json') as keys:
-            keys_json = json.load(keys)
+        if os.environ.get('KAMERKA_KEYS') is not None:
+            keys_json = json.load(os.environ['KAMERKA_KEYS'])
+        else:
+            with open('keys.json') as keys:
+                keys_json = json.load(keys)
 
         return keys_json
     except Exception as e:
