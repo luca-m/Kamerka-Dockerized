@@ -1,5 +1,12 @@
 # ꓘamerka GUI
 
+__DOCKERIZED VERSION OF Kamerka GUI__
+
+This repository contains scripts to dockerize the famous Kamerka GUI.
+
+If you need a ready to go docker image checkout https://hub.docker.com/r/lcmko/kamerka-gui
+
+
 ## Ultimate Internet of Things/Industrial Control Systems reconnaissance tool.
 
 <p align="center"><img src="https://www.offensiveosint.io/content/images/2020/07/OffensiveOsint-logo-RGB-2.png" alt="logo" width="200"/></p>
